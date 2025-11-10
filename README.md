@@ -4,9 +4,12 @@ Minimaler Ausgangspunkt für lokale Hackathon-Prototypen mit Node 20+, Express u
 
 ## Setup
 
-1. Node 20 installieren. > https://nodejs.org/dist/v24.11.0/node-v24.11.0-x64.msi
-2. `npm install`
-3. `.env` anpassen, falls andere Ports/DB-Pfade benötigt werden.
+1. Node 20 installieren.
+   > Windoof: https://nodejs.org/dist/v24.11.0/node-v24.11.0-x64.msi
+   > Mac: https://nodejs.org/dist/v24.11.0/node-v24.11.0.pkg
+     
+3. `npm install`
+4. `.env` anpassen, falls andere Ports/DB-Pfade benötigt werden.
 
 ## Entwicklung
 
