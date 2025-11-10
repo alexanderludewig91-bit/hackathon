@@ -5,13 +5,17 @@ Minimaler Ausgangspunkt für lokale Hackathon-Prototypen mit Node 20+, Express u
 ## Setup
 
 1. Node 20 installieren.
-   - Windoof: https://nodejs.org/dist/v24.11.0/node-v24.11.0-x64.msi
+   - Windows: https://nodejs.org/dist/v24.11.0/node-v24.11.0-x64.msi
    - Mac: https://nodejs.org/dist/v24.11.0/node-v24.11.0.pkg
-     
+2. Terminal/PowerShell öffnen und ins Projektverzeichnis wechseln.
+   - Windows: Startmenü → „PowerShell“. Dann `cd C:\Users\<Name>\hackathon`.
+   - Mac: Spotlight → „Terminal“. Dann `cd ~/hackathon`.
 3. `npm install`
 4. `.env` anpassen, falls andere Ports/DB-Pfade benötigt werden.
 
 ## Entwicklung
+
+Alle folgenden Befehle laufen im selben Fenster wie `npm install`.
 
 ```bash
 npx prisma db push
@@ -21,6 +25,8 @@ npm run dev
 Server startet standardmäßig auf `http://localhost:3000`.
 
 ## Tests
+
+Für Tests gilt das gleiche Terminal (Windows & Mac identische Befehle):
 
 ```bash
 npm test
