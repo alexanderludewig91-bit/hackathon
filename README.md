@@ -6,7 +6,7 @@ Minimaler Ausgangspunkt für lokale Hackathon-Prototypen mit Node 20+, Express u
 
 1. Node 20 installieren.
 2. `npm install`
-3. `.env` aus `env.example` ableiten (Datei umbenennen) und falls nötig anpassen.
+3. `.env` anpassen, falls andere Ports/DB-Pfade benötigt werden.
 
 ## Entwicklung
 
