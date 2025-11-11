@@ -43,6 +43,37 @@ npm test
 - Fehlerrückgaben im `{ error }`-Format, Logging mit Präfix.
 - Prisma Studio optional starten: `npm run prisma:studio`
 
+## Projektstruktur
+
+```
+hackathon/
+├── src/
+│   ├── app.js              # Express-App, Routen-Mounting, Middleware
+│   ├── server.js           # Einstiegspunkt (npm run dev)
+│   ├── db.js               # Prisma-Client-Initialisierung
+│   ├── logger.js           # Einfache Logger-Helfer
+│   ├── middlewares/        # 404-Handler & Error-Handler
+│   ├── repositories/       # Prisma-Abfragen (Datenzugriff)
+│   └── services/           # Geschäftslogik + Validierung
+├── public/
+│   ├── index.html          # Landingpage
+│   ├── styles.css          # Styling
+│   └── app.js              # Frontend-Logik, Fetch & Dialoge
+├── prisma/
+│   └── schema.prisma       # Datenbank-Schema für Prisma
+├── tests/
+│   └── messages.test.js    # Vitest/Supertest-Routen-Tests
+├── .env                    # Lokale Konfiguration (Port, DB-URL)
+├── package.json            # Dependencies & Skripte
+└── README.md               # Dieses Dokument
+```
+
+Was wo passiert:
+- `src/` hält das komplette Backend – `routes` für Express-Endpunkte, `services` für Logik, `repositories` für die DB-Zugriffe.
+- `public/` enthält das statische Frontend, das Express automatisch ausliefert.
+- `prisma/` definiert die Datenbank; `npx prisma db push` erzeugt/aktualisiert `dev.db`.
+- `tests/` zeigt minimale Beispiele für Happy Path und Fehlerfälle – idealer Startpunkt für eigene Tests.
+
 ## Datenbank
 
 - SQLite-Datei `dev.db`
