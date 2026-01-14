@@ -34,6 +34,13 @@ Laut der Studie erwarten Bürgerinnen und Bürger:
 - **Wiederverwendbarkeit**: Einmal hochgeladene Dokumente nicht erneut einreichen müssen (Once-Only-Prinzip)
 - **Zugänglichkeit**: Von jedem Gerät, zu jeder Zeit
 
+### Ergänzende Perspektive: FIM-Redaktionen / Leistungsbeschreibungen
+
+Neben der Bürgerperspektive gibt es auch eine **Redaktionsperspektive** (z.B. FIM-Redaktionen), die Verwaltungsleistungen erstellt, abstimmt und veröffentlicht.
+
+- **Problem heute (aus Redaktionssicht)**: Fragmentierte Redaktionssysteme mit eingeschränkter Interoperabilität (u.a. unterschiedliche XML-Standard-Versionen) sowie geringe Transparenz darüber, wie andere Länder Leistungen beschreiben; Abstimmungen über Ressort-/Organisationsgrenzen sind nur teilweise unterstützt.
+- **Wünsche der FIM-Redaktionen**: Einfachere organisationsübergreifende Abstimmung, Transparenz über neue/geänderte Leistungen und Freigaben sowie optional **KI-Support** (Textvorschläge zur schnelleren Erstellung/Überarbeitung von Leistungstexten).
+
 ---
 
 ## Hackathon: Use Cases
@@ -192,19 +199,61 @@ Ein persönlicher Dokumentenspeicher, in dem Bürger häufig benötigte Unterlag
 
 ---
 
-## Optionaler Baustein: Nutzeranmeldung (simuliert)
+## Use Case 5: Leistungsbeschreibung-Redaktion (FIM light)
 
-> *„Willkommen zurück, Max Mustermann!"*
+> *„Leistungstexte erstellen, verbessern, vergleichen und freigeben"*
+
+### Beschreibung
+
+Ein vereinfachtes **Backoffice-Modul** für Verwaltungsmitarbeitende / (FIM-)Redaktionen, um Verwaltungsleistungen als Texte zu erstellen, zwischen Organisationen nachnutzbar zu machen und Änderungen transparent freizugeben – ohne Anbindung an externe Redaktionssysteme oder Fachverfahren.
+
+### Hauptfunktionalitäten
+
+- **Editor für Leistungstexte**: Leistung anlegen und bearbeiten (z.B. Titel, Kurzbeschreibung, Voraussetzungen, Unterlagen, Ablauf)
+- **Status & Freigabe-Workflow**: Entwurf → in Prüfung → freigegeben (einfacher „Freigeben“-Button)
+- **Änderungsverlauf light**: „Was hat sich geändert?“ (z.B. Vergleich der aktuellen Version zur vorherigen)
+- **Vergleich / Nachnutzung**: „Ähnliche Leistung aus anderem Land ansehen“ (Mock-Daten reichen)
+- **Transparenz-Board**: Liste „neu / aktualisiert / freigegeben“ für schnelle Übersicht
+
+### Wow-Faktoren
+
+- Diff-Ansicht wie bei Git (rot/grün) für Änderungen an Texten
+- Visuelle Statusleiste für den Freigabeprozess
+- Schnelles „Review“-Gefühl durch klare, reduzierte Oberfläche
+- Dashboard-Kachel „Diese Woche geändert“ (kleine Kennzahlen reichen)
+
+### Optionale KI-Erweiterung: Textvorschläge & Checks
+
+> *„Formuliere diesen Abschnitt verständlicher“ / „Was fehlt noch?“*
+
+KI als punktuelle Unterstützung im Redaktionsprozess:
+
+- Button **„Text verbessern“** (Klartext, kürzer, aktiver Stil)
+- Button **„Textvorschläge“** (alternativen Formulierungen / Varianten)
+- Optional: **Konsistenz-Check** (z.B. Unterlagen erwähnt, aber nicht gelistet; unklare Begriffe)
+
+**Hinweis:** Das Backoffice ist optional. Es kann unabhängig vom Bürgerportal gebaut werden oder als „Admin-Modus“ in derselben App existieren.
+
+---
+
+## Optionaler Baustein: Rollen-/Persona-Auswahl (simuliert)
+
+> *„Willkommen zurück, Max Mustermann!“ / „Redaktionsmodus aktiv“*
 
 ### Warum relevant?
 
-Viele der oben genannten Use Cases setzen eine **Nutzeridentität** voraus:
+Viele der oben genannten Use Cases setzen eine **Nutzeridentität bzw. Rolle** voraus:
 
-- **Meine Anträge** – Welche Anträge gehören zu mir?
-- **Dokumenten-Tresor** – Wessen Dokumente sind das?
-- **Statusverfolgung** – Anträge einer Person zuordnen
+- **Bürgerportal**:
+  - **Meine Anträge** – Welche Anträge gehören zu mir?
+  - **Dokumenten-Tresor** – Wessen Dokumente sind das?
+  - **Statusverfolgung** – Anträge einer Person zuordnen
+- **Backoffice / Redaktion (FIM light)**:
+  - **Leistungstexte bearbeiten** – Wer darf Inhalte ändern?
+  - **Freigaben/Review** – Wer darf veröffentlichen?
+  - **Transparenz** – Welche Änderungen wurden von wem freigegeben?
 
-Ohne eine Form der Anmeldung fehlt das realistische Benutzererlebnis aus Bürgerperspektive. Da eine echte Authentifizierung (mit Passwort-Handling, Sicherheit, etc.) für den Hackathon zu aufwendig wäre, empfehlen wir eine **vereinfachte Simulation**.
+Ohne eine Form der Rollen-/Persona-Auswahl fehlt das realistische Benutzererlebnis (Bürgerperspektive und/oder Verwaltungsperspektive). Da eine echte Authentifizierung (mit Passwort-Handling, Sicherheit, etc.) für den Hackathon zu aufwendig wäre, empfehlen wir eine **vereinfachte Simulation**.
 
 ### Mögliche Umsetzungsvarianten
 
@@ -224,16 +273,27 @@ Ohne eine Form der Anmeldung fehlt das realistische Benutzererlebnis aus Bürger
 
 #### Variante C: Persona-Auswahl
 
-- Dropdown oder Kacheln mit **vordefinierten Test-Personas**:
-  - 👤 Max Mustermann (hat bereits Anträge gestellt)
-  - 👤 Erika Musterfrau (Neunutzerin, keine Anträge)
-  - 👤 Familie Schmidt (mehrere Personen im Haushalt)
-- Zeigt verschiedene Zustände und Szenarien der App
+- Dropdown oder Kacheln mit **vordefinierten Test-Personas** (gern nach Rollen gruppiert):
+  - **Bürger-Personas**:
+    - Max Mustermann (hat bereits Anträge gestellt)
+    - Erika Musterfrau (Neunutzerin, keine Anträge)
+    - Familie Schmidt (mehrere Personen im Haushalt)
+  - **Redaktion/Admin-Personas** (optional, wenn Backoffice-UC umgesetzt wird):
+    - FIM-Redaktion Bund (darf freigeben)
+    - Landesredaktion (darf Entwürfe erstellen)
+    - Reviewer/Prüfung (darf kommentieren und prüfen)
+- Zeigt verschiedene Zustände und Szenarien (Bürgerportal und/oder Backoffice)
 - Gut geeignet für Demos und Präsentationen
+
+#### Variante D: Rollen-Switch (Bürger ↔ Redaktion)
+
+- Umschalter/Dropdown in der UI (z.B. oben rechts): **„Rolle wechseln“**
+- Wechselt die sichtbaren Bereiche (Bürgerportal vs. Backoffice) und ggf. die Persona
+- Besonders hilfreich, wenn beide Module in einer Demo gezeigt werden sollen
 
 ### Hinweis
 
-Die Wahl der Variante bleibt den Teilnehmenden überlassen. Je nach gewähltem Use Case kann auch komplett auf eine Anmeldung verzichtet werden – allerdings wirkt die Anwendung dann weniger wie eine echte Bürgerplattform.
+Die Wahl der Variante bleibt den Teilnehmenden überlassen. Je nach gewähltem Use Case kann auch komplett auf Rollen/Personas verzichtet werden – allerdings wirkt die Anwendung dann weniger wie eine echte Plattform mit „Meine…“-Bereichen bzw. Backoffice-Freigaben.
 
 ---
 
