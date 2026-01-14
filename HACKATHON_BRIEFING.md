@@ -1,0 +1,246 @@
+# Hackathon Briefing: Föderale Antragsplattform
+
+## Hintergrund
+
+### Die Vision: „Einmal für Alle!"
+
+Die Machbarkeitsstudie des IT-Planungsrats (Stand: Dezember 2025) beschreibt die Vision einer **zentralen, föderalen Antragsplattform** für Deutschland. Ziel ist es, Verwaltungsleistungen für alle Bürgerinnen und Bürger digital zugänglich zu machen – einfach, intuitiv und von überall erreichbar.
+
+### Das Problem heute
+
+- **69 Millionen potenzielle Nutzende** – aber nur ein Bruchteil nutzt digitale Verwaltungsangebote
+- **Fragmentierte Landschaft**: Jede Kommune, jedes Bundesland entwickelt eigene Lösungen
+- **Schlechte Auffindbarkeit**: Bürger wissen oft nicht, welche Leistungen ihnen zustehen oder wo sie diese beantragen können
+- **Mangelnde Nutzerfreundlichkeit**: Die Usability entspricht nicht dem Standard, den Bürger aus dem Privatsektor (Amazon, Booking, etc.) gewohnt sind
+- **Hohe Kosten**: Das Prinzip „Einer für Alle" (EfA) scheitert häufig an den Anbindungskosten für Kommunen
+
+### Der Lösungsansatz
+
+Die Studie schlägt eine Plattform vor, die:
+
+1. **Zentralen Zugang** bietet – eine URL, ein Portal für alle Verwaltungsleistungen
+2. **Ende-zu-Ende digitalisiert** – nicht nur das Formular, sondern den gesamten Prozess
+3. **Bürgerorientiert** gestaltet ist – einfach, schnell, verständlich
+4. **Föderale Strukturen** respektiert – Kommunen behalten ihre „Marke"
+5. **Moderne Technologien** nutzt – Cloud, Low-Code, KI-Unterstützung
+
+### Was Bürger sich wünschen
+
+Laut der Studie erwarten Bürgerinnen und Bürger:
+
+- **Einfachheit**: Weniger Bürokratie, verständliche Sprache
+- **Geschwindigkeit**: Schnelle Bearbeitung, sofortiges Feedback
+- **Transparenz**: Jederzeit wissen, wo der Antrag steht
+- **Wiederverwendbarkeit**: Einmal hochgeladene Dokumente nicht erneut einreichen müssen (Once-Only-Prinzip)
+- **Zugänglichkeit**: Von jedem Gerät, zu jeder Zeit
+
+---
+
+## Hackathon: Use Cases
+
+Im Rahmen des Hackathons sollen **vereinfachte Prototypen** entwickelt werden, die zentrale Aspekte der föderalen Antragsplattform demonstrieren.
+
+### Rahmenbedingungen
+
+- ✅ Standalone-Lösung (keine Anbindung an Fachverfahren oder externe Systeme)
+- ✅ Lokale Datenhaltung mit SQLite
+- ✅ Fokus auf schnelle, sichtbare Ergebnisse
+- ✅ AI-Coding-optimiert – klare, abgegrenzte Features
+
+---
+
+## Use Case 1: Intelligenter Antrags-Wizard
+
+> *„Schritt für Schritt zum fertigen Antrag"*
+
+### Beschreibung
+
+Ein geführter, mehrstufiger Antragsprozess für eine beispielhafte Verwaltungsleistung (z.B. Wohngeld, Parkausweis, Hundesteueranmeldung). Der Wizard führt den Nutzer intuitiv durch alle erforderlichen Angaben und validiert Eingaben in Echtzeit.
+
+### Hauptfunktionalitäten
+
+- **Mehrstufiges Formular** mit visuellem Fortschrittsindikator
+- **Dynamische Felder**: Je nach Eingabe werden relevante Folgefelder ein- oder ausgeblendet
+- **Echtzeit-Validierung**: Sofortiges Feedback bei fehlerhaften oder unvollständigen Eingaben
+- **Zusammenfassungsseite**: Übersicht aller Angaben vor dem Absenden
+- **Bestätigungsseite**: Nach Absenden erhält der Nutzer eine Antragsnummer
+
+### Wow-Faktoren
+
+- Animierter Fortschrittsbalken
+- Sanfte Übergänge zwischen den Schritten
+- Konfetti-Animation bei erfolgreicher Einreichung 🎉
+- Responsives Design für Desktop und Mobile
+
+### Optionale KI-Erweiterung: Hilfe-Assistent
+
+> *„Was bedeutet ‚Bruttoeinkommen'? Zählt Kindergeld dazu?"*
+
+Ein **Chat-Widget** im Wizard, das kontextbezogene Hilfe bietet:
+
+- Kleiner Chat-Button (z.B. unten rechts) während der Antragsstellung
+- Nutzer tippt Frage ein → KI antwortet mit verständlicher Erklärung
+- **Kontextbezogen**: Die KI weiß, in welchem Formularschritt sich der Nutzer befindet
+- Erklärt Fachbegriffe, gibt Hinweise zu benötigten Dokumenten
+
+**Beispiel-Interaktionen:**
+
+| Nutzerfrage | KI-Antwort |
+|-------------|------------|
+| „Was ist Bruttoeinkommen?" | „Das Bruttoeinkommen ist Ihr Gehalt vor Abzug von Steuern und Sozialabgaben." |
+| „Welche Dokumente brauche ich?" | „Für diesen Antrag benötigen Sie: Einkommensnachweis, Mietvertrag und Personalausweis." |
+
+**Hinweis:** Der Wizard funktioniert auch ohne den Chatbot vollständig. Die KI ist ein „Nice-to-have", kein Muss.
+
+---
+
+## Use Case 2: Lebenslage-Finder
+
+> *„Welche Leistungen stehen mir zu?"*
+
+### Beschreibung
+
+Ein interaktives Tool, das Bürgern hilft, passende Verwaltungsleistungen zu entdecken. Durch wenige, einfache Fragen zur persönlichen Lebenssituation ermittelt das System relevante Angebote.
+
+### Hauptfunktionalitäten
+
+- **Kurzer Fragebogen**: 5-7 verständliche Fragen (Ja/Nein oder Multiple-Choice)
+- **Intelligentes Matching**: Regelbasierte Zuordnung von Leistungen basierend auf den Antworten
+- **Leistungskatalog**: Übersicht verfügbarer Verwaltungsleistungen mit Beschreibung
+- **Ergebnisanzeige**: Personalisierte Liste passender Leistungen
+- **Direkte Weiterleitung**: „Jetzt beantragen"-Button führt zum entsprechenden Antrag
+
+### Wow-Faktoren
+
+- Quiz-artige, interaktive Oberfläche
+- Animierte Ergebniskarten mit Einblendeffekt
+- Counter-Animation: „X Leistungen für Sie gefunden!"
+- Möglichkeit, Ergebnisse zu filtern oder zu sortieren
+
+### Optionale KI-Erweiterung: Freitext-Eingabe
+
+> *„Ich bin gerade umgezogen und habe zwei kleine Kinder…"*
+
+Statt (oder zusätzlich zum) klassischen Fragebogen kann der Nutzer seine **Situation in eigenen Worten beschreiben**:
+
+- Textfeld: „Beschreiben Sie Ihre Situation…"
+- Nutzer schreibt 1-3 Sätze in natürlicher Sprache
+- KI analysiert und identifiziert relevante Lebensereignisse und Bedarfe
+- Ergebnis: Passende Verwaltungsleistungen werden vorgeschlagen
+
+**Beispiel-Interaktionen:**
+
+| Nutzereingabe | Vorgeschlagene Leistungen |
+|---------------|---------------------------|
+| „Ich bin alleinerziehend und habe meinen Job verloren." | Arbeitslosengeld, Kinderzuschlag, Wohngeld |
+| „Wir haben ein Baby bekommen." | Elterngeld, Kindergeld, Kita-Gutschein |
+| „Ich bin 67 und möchte in Rente gehen." | Rentenantrag, Grundsicherung im Alter |
+
+**Hinweis:** Der klassische Fragebogen bleibt als Alternative erhalten. Nutzer können wählen:
+- 📝 „Fragen beantworten" (klassisch)
+- 💬 „Situation beschreiben" (KI-gestützt)
+
+---
+
+## Use Case 3: Antrags-Statustracker
+
+> *„Wo ist mein Antrag?"*
+
+### Beschreibung
+
+Ein Tracking-Tool, mit dem Bürger den aktuellen Bearbeitungsstand ihrer Anträge verfolgen können – vergleichbar mit der Paketverfolgung bei Lieferdiensten.
+
+### Hauptfunktionalitäten
+
+- **Antragsnummer-Eingabe**: Einfaches Suchfeld zur Statusabfrage
+- **Timeline-Darstellung**: Visualisierung aller Bearbeitungsschritte
+- **Detailansicht**: Informationen zu jedem Schritt (Datum, Status, ggf. Hinweise)
+- **Statusübersicht**: Aktueller Stand auf einen Blick (eingegangen, in Bearbeitung, erledigt)
+- **Antragshistorie**: Liste aller eigenen Anträge (bei wiederholter Nutzung)
+
+### Wow-Faktoren
+
+- Elegante, vertikale Timeline-Komponente
+- Farbcodierte Status-Badges (grün, gelb, rot)
+- Geschätzte Restbearbeitungszeit
+- Sanfte Animationen beim Laden der Statusdaten
+
+---
+
+## Use Case 4: Dokumenten-Tresor
+
+> *„Einmal hochladen, überall nutzen"*
+
+### Beschreibung
+
+Ein persönlicher Dokumentenspeicher, in dem Bürger häufig benötigte Unterlagen (Personalausweis, Einkommensnachweise, Meldebescheinigung) ablegen und bei zukünftigen Anträgen wiederverwenden können.
+
+### Hauptfunktionalitäten
+
+- **Dokument-Upload**: Drag & Drop oder Dateiauswahl
+- **Kategorisierung**: Zuordnung zu Dokumenttypen (Ausweisdokument, Nachweis, Bescheinigung, etc.)
+- **Dokumentenübersicht**: Liste aller gespeicherten Dokumente mit Vorschau
+- **Wiederverwendung**: Bei Antragsstellung Dokumente aus dem Tresor auswählen
+- **Gültigkeitshinweis**: Anzeige, wenn Dokumente möglicherweise veraltet sind
+
+### Wow-Faktoren
+
+- Drag & Drop mit visuellem Feedback (Datei schwebt über Zielbereich)
+- Dokumenttyp-spezifische Icons
+- Vorschau-Thumbnails für hochgeladene Dokumente
+- „X Dokumente gespeichert"-Badge im Header
+
+---
+
+## Optionaler Baustein: Nutzeranmeldung (simuliert)
+
+> *„Willkommen zurück, Max Mustermann!"*
+
+### Warum relevant?
+
+Viele der oben genannten Use Cases setzen eine **Nutzeridentität** voraus:
+
+- **Meine Anträge** – Welche Anträge gehören zu mir?
+- **Dokumenten-Tresor** – Wessen Dokumente sind das?
+- **Statusverfolgung** – Anträge einer Person zuordnen
+
+Ohne eine Form der Anmeldung fehlt das realistische Benutzererlebnis aus Bürgerperspektive. Da eine echte Authentifizierung (mit Passwort-Handling, Sicherheit, etc.) für den Hackathon zu aufwendig wäre, empfehlen wir eine **vereinfachte Simulation**.
+
+### Mögliche Umsetzungsvarianten
+
+#### Variante A: Demo-Modus
+
+- Button auf der Startseite: **„Als Testnutzer anmelden"**
+- Ein Klick → Nutzer ist sofort als „Max Mustermann" eingeloggt
+- Keine Eingabefelder, keine Passwörter
+- Schnellste Variante für Prototypen
+
+#### Variante B: Pseudo-Login
+
+- Einfaches Formular mit **nur einem Feld: Name**
+- Nutzer gibt einen beliebigen Namen ein
+- System merkt sich den Namen für die aktuelle Session
+- Ermöglicht personalisierte Begrüßung und Zuordnung
+
+#### Variante C: Persona-Auswahl
+
+- Dropdown oder Kacheln mit **vordefinierten Test-Personas**:
+  - 👤 Max Mustermann (hat bereits Anträge gestellt)
+  - 👤 Erika Musterfrau (Neunutzerin, keine Anträge)
+  - 👤 Familie Schmidt (mehrere Personen im Haushalt)
+- Zeigt verschiedene Zustände und Szenarien der App
+- Gut geeignet für Demos und Präsentationen
+
+### Hinweis
+
+Die Wahl der Variante bleibt den Teilnehmenden überlassen. Je nach gewähltem Use Case kann auch komplett auf eine Anmeldung verzichtet werden – allerdings wirkt die Anwendung dann weniger wie eine echte Bürgerplattform.
+
+---
+
+## Hinweise für Teilnehmende
+
+- Die **technische Umsetzung** (Datenbankschema, API-Design, Frontend-Architektur) ist Teil der Hackathon-Aufgabe
+- Es gibt **keine vorgegebene „richtige" Lösung** – Kreativität ist erwünscht!
+- **Fokus auf Benutzererlebnis**: Eine einfache Lösung mit gutem UX ist wertvoller als eine komplexe Lösung mit schlechter Bedienbarkeit
+- **Mockdaten sind erlaubt**: Für den Prototyp müssen keine echten Verwaltungsleistungen abgebildet werden
+

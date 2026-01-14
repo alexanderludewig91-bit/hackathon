@@ -1,6 +1,9 @@
 node_modules/
-dev.db
+*.db
+*.db-shm
+*.db-wal
 coverage/
 dist/
 *.log
+.env
 
